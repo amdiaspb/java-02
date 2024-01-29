@@ -27,7 +27,6 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity<Object> postUser(@RequestBody @Valid UserDTO body) {
-        
         Optional<UserModel> user = userService.save(body);
 
         if(!user.isPresent()) {

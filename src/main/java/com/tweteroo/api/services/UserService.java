@@ -18,13 +18,9 @@ public class UserService {
     }
 
     public Optional<UserModel> save(UserDTO dto) {
-
         if (userRepository.existsByUsername(dto.getUsername())) {
             return Optional.empty();
         }
-
         return Optional.of(userRepository.save(new UserModel(dto)));
-
     }
-
 }
